@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - OKWIN</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    font-family:Arial,sans-serif;
+    color:white;
+}
+.box{
+    width:90%;
+    max-width:400px;
+    margin:50px auto;
+    background:#222;
+    padding:20px;
+    border-radius:15px;
+}
+h1{
+    text-align:center;
+    color:#00c853;
+}
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+button{
+    width:100%;
+    padding:15px;
+    background:#00c853;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+}
+a{
+    color:#00c853;
+    text-decoration:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h1>OKWIN Register</h1>
+
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="tel" id="mobile" placeholder="Mobile Number">
+
+<input type="password" id="password" placeholder="Password">
+
+<input type="text" id="referral" placeholder="Referral Code (Optional)">
+
+<button onclick="register()">Create Account</button>
+
+<p style="text-align:center;">
+Already have account?
+<a href="login.html">Login</a>
+</p>
+
+</div>
+
+<script>
+function register(){
+
+let name=document.getElementById("name").value.trim();
+let mobile=document.getElementById("mobile").value.trim();
+let password=document.getElementById("password").value.trim();
+let referral=document.getElementById("referral").value.trim();
+
+if(name=="" || mobile=="" || password==""){
+    alert("Please Fill All Details");
+    return;
+}
+
+localStorage.setItem("name",name);
+localStorage.setItem("mobile",mobile);
+localStorage.setItem("password",password);
+localStorage.setItem("referral",referral);
+
+alert("Registration Successful");
+
+window.location.href="login.html";
+
+}
+</script>
+
+</body>
+</html>

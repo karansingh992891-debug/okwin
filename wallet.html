@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallet - OKWIN</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+}
+
+.header{
+background:#00cc33;
+padding:20px;
+text-align:center;
+font-size:35px;
+font-weight:bold;
+}
+
+.card{
+background:#222;
+margin:20px;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+.balance{
+font-size:55px;
+color:#00ff33;
+font-weight:bold;
+margin:20px 0;
+}
+
+.btn{
+display:block;
+background:#00cc33;
+color:white;
+padding:15px;
+margin:15px 0;
+text-decoration:none;
+border-radius:10px;
+font-size:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+💰 Wallet
+</div>
+
+<div class="card">
+
+<h1 id="welcome">Welcome</h1>
+
+<h2>Your Balance</h2>
+
+<div class="balance" id="balance">₹0.00</div>
+
+<a class="btn" href="deposit.html">💳 Deposit</a>
+
+<a class="btn" href="withdraw.html">💸 Withdraw</a>
+
+<a class="btn" href="history.html">📜 Transaction History</a>
+
+<a class="btn" href="referral.html">👥 Referral</a>
+<a class="btn" href="admin.html">👨‍💼 Admin Panel</a>
+<a class="btn" href="index.html">🏠 Home</a>
+
+</div>
+
+<script>
+let name = localStorage.getItem("name");
+
+if(name){
+    document.getElementById("welcome").innerHTML = "Welcome " + name;
+}
+
+let balance = localStorage.getItem("balance");
+
+if(balance == null){
+    balance = "0.00";
+    localStorage.setItem("balance", balance);
+}
+
+document.getElementById("balance").innerHTML = "₹" + balance;
+</script>
+
+</body>
+</html>

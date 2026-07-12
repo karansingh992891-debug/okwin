@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Withdraw - OKWIN</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+}
+
+.header{
+background:#ff5722;
+padding:18px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+}
+
+.card{
+width:90%;
+max-width:400px;
+margin:30px auto;
+background:#222;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:15px;
+margin:15px 0;
+font-size:18px;
+border:none;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+button,.btn{
+width:100%;
+padding:15px;
+margin-top:15px;
+background:#ff5722;
+color:white;
+font-size:20px;
+border:none;
+border-radius:10px;
+text-decoration:none;
+display:block;
+box-sizing:border-box;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+💸 Withdraw
+</div>
+
+<div class="card">
+
+<h2>Withdraw Money</h2>
+
+<input type="number" id="amount" placeholder="Enter Amount">
+
+<button onclick="withdrawMoney()">Withdraw</button>
+
+<a class="btn" href="wallet.html">💰 Back to Wallet</a>
+
+</div>
+
+<script>
+function withdrawMoney(){
+
+let amount = Number(document.getElementById("amount").value);
+
+if(amount<=0){
+alert("Enter Valid Amount");
+return;
+}
+
+let balance = Number(localStorage.getItem("balance")) || 0;
+
+if(amount>balance){
+alert("Insufficient Balance");
+return;
+}
+
+balance = balance - amount;
+
+localStorage.setItem("balance",balance);
+
+let history = JSON.parse(localStorage.getItem("history")) || [];
+
+let date = new Date().toLocaleString();
+
+history.push("💸 Withdraw ₹"+amount+"<br>"+date);
+
+localStorage.setItem("history",JSON.stringify(history));
+
+alert("Withdraw Successful");
+
+window.location.href="wallet.html";
+
+}
+</script>
+
+</body>
+</html>

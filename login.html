@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - OKWIN</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+background:#111;
+font-family:Arial,sans-serif;
+color:white;
+}
+
+.box{
+width:90%;
+max-width:400px;
+margin:60px auto;
+background:#222;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+h1{
+color:#00ff33;
+}
+
+input{
+width:90%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+font-size:18px;
+}
+
+button{
+width:95%;
+padding:15px;
+margin-top:15px;
+background:#00c800;
+color:white;
+font-size:22px;
+border:none;
+border-radius:10px;
+}
+
+a{
+color:#00ff33;
+text-decoration:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>OKWIN Login</h1>
+
+<input type="tel" id="mobile" placeholder="Mobile Number">
+
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p>
+Don't have an account?
+<a href="register.html">Register</a>
+</p>
+
+</div>
+
+<script>
+function login(){
+
+let mobile=document.getElementById("mobile").value.trim();
+let password=document.getElementById("password").value.trim();
+
+let savedMobile=localStorage.getItem("mobile");
+let savedPassword=localStorage.getItem("password");
+
+if(mobile=="" || password==""){
+alert("Please enter Mobile Number and Password");
+return;
+}
+
+if(mobile===savedMobile && password===savedPassword){
+alert("Login Successful");
+window.location.href="index.html";
+}else{
+alert("Wrong Mobile Number or Password");
+}
+
+}
+</script>
+
+</body>
+</html>

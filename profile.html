@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+}
+
+.header{
+background:#00c853;
+padding:15px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+.box{
+width:90%;
+max-width:400px;
+margin:30px auto;
+background:#222;
+padding:20px;
+border-radius:15px;
+}
+
+h2{
+text-align:center;
+color:#00ff33;
+}
+
+.info{
+background:#333;
+padding:12px;
+margin:12px 0;
+border-radius:8px;
+font-size:18px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:20px;
+background:red;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+My Profile
+</div>
+
+<div class="box">
+
+<h2>Welcome</h2>
+
+<div class="info">
+<b>Name :</b>
+<span id="name"></span>
+</div>
+
+<div class="info">
+<b>Mobile :</b>
+<span id="mobile"></span>
+</div>
+
+<div class="info">
+<b>Password :</b>
+<span id="password"></span>
+</div>
+
+<div class="info">
+<b>Referral :</b>
+<span id="referral"></span>
+</div>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+document.getElementById("name").innerHTML =
+localStorage.getItem("name");
+
+document.getElementById("mobile").innerHTML =
+localStorage.getItem("mobile");
+
+document.getElementById("password").innerHTML =
+localStorage.getItem("password");
+
+document.getElementById("referral").innerHTML =
+localStorage.getItem("referral");
+
+function logout(){
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+</html>

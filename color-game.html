@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Guess Game</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+text-align:center;
+}
+
+.header{
+background:#00c853;
+padding:20px;
+font-size:28px;
+font-weight:bold;
+}
+
+.box{
+width:90%;
+max-width:400px;
+margin:30px auto;
+background:#222;
+padding:20px;
+border-radius:15px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin:10px 0;
+font-size:18px;
+border:none;
+border-radius:10px;
+color:white;
+cursor:pointer;
+}
+
+.red{background:#e53935;}
+.green{background:#43a047;}
+.blue{background:#1e88e5;}
+
+.result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+.home{
+display:block;
+margin-top:20px;
+background:#00c853;
+padding:15px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+🎨 Color Guess Game
+</div>
+
+<div class="box">
+
+<h2>Choose a Color</h2>
+
+<button class="red" onclick="play('Red')">🔴 Red</button>
+
+<button class="green" onclick="play('Green')">🟢 Green</button>
+
+<button class="blue" onclick="play('Blue')">🔵 Blue</button>
+
+<div class="result" id="result">
+Choose a color to start.
+</div>
+
+<a class="home" href="games.html">⬅ Back to Games</a>
+
+</div>
+
+<script>
+function play(choice){
+
+let colors=["Red","Green","Blue"];
+let random=colors[Math.floor(Math.random()*3)];
+
+if(choice===random){
+document.getElementById("result").innerHTML=
+"🎉 You Win!<br>Result: "+random;
+}else{
+document.getElementById("result").innerHTML=
+"😔 Try Again!<br>Result: "+random;
+}
+
+}
+</script>
+
+</body>
+</html>

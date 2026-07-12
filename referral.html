@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referral - OKWIN</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+}
+
+.header{
+background:#00c853;
+padding:20px;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+}
+
+.card{
+width:90%;
+max-width:400px;
+margin:20px auto;
+background:#222;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+.code{
+font-size:28px;
+font-weight:bold;
+color:#00ff33;
+margin:20px 0;
+}
+
+.btn{
+display:block;
+background:#00c853;
+color:white;
+padding:15px;
+margin-top:15px;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+border:none;
+width:100%;
+box-sizing:border-box;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+👥 Referral
+</div>
+
+<div class="card">
+
+<h2>Your Referral Code</h2>
+
+<div class="code" id="code"></div>
+
+<button class="btn" onclick="copyCode()">📋 Copy Code</button>
+
+<a class="btn" href="wallet.html">⬅ Back Wallet</a>
+
+</div>
+
+<script>
+let mobile = localStorage.getItem("mobile") || "VIPIN123";
+
+document.getElementById("code").innerHTML = mobile;
+
+function copyCode(){
+navigator.clipboard.writeText(mobile);
+alert("Referral Code Copied");
+}
+</script>
+
+</body>
+</html>
