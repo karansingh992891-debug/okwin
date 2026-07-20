@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TASAN WIN</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:#fff;
+padding-bottom:90px;
+}
+
+.header{
+background:linear-gradient(90deg,#000,#b8860b);
+padding:20px;
+text-align:center;
+border-bottom:3px solid gold;
+}
+
+.logo{
+font-size:34px;
+font-weight:bold;
+color:gold;
+}
+
+.notice{
+margin:15px;
+padding:15px;
+background:#181818;
+border:2px solid gold;
+border-radius:10px;
+text-align:center;
+}
+
+.wallet{
+margin:15px;
+padding:20px;
+background:#181818;
+border:2px solid gold;
+border-radius:15px;
+text-align:center;
+}
+
+#w
+  <div class="games">
+
+<div class="game" onclick="location.href='color-game.html'">
+<span>🎨</span>
+Color Game
+</div>
+
+<div class="game" onclick="location.href='slots.html'">
+<span>🎰</span>
+Slots
+</div>
+
+<div class="game" onclick="location.href='aviator.html'">
+<span>✈️</span>
+Aviator
+</div>
+
+<div class="game" onclick="location.href='lucky-spin.html'">
+<span>🎡</span>
+Lucky Spin
+</div>
+
+<div class="game" onclick="location.href='wallet.html'">
+<span>💰</span>
+Wallet
+</div>
+
+<div class="game" onclick="location.href='profile.html'">
+<span>👤</span>
+Profile
+</div>
+
+</div>
+
+<button class="btn" id="loginBtn">
+🔐 LOGIN
+</button>
+
+<button class="btn" id="registerBtn">
+📝 REGISTER
+</button>
+
+<button class="btn" id="logoutBtn" style="display:none;" onclick="logoutUser()">
+🚪 LOGOUT
+</button>
+
+<div class="support">
+<h3>📞 Customer Support</h3>
+<p>WhatsApp : 9928916103</p>
+<p>Telegram : @TasanWin</p>
+</div>
+
+<div class="bottom">
+<a href="index.html">🏠 Home</a>
+<a href="wallet.html">💰 Wallet</a>
+<a href="profile.html">👤 Profile</a>
+<a href="
+  <script src="app.js"></script>
+
+<script>
+
+function logoutUser(){
+
+localStorage.removeItem("isLoggedIn");
+
+alert("✅ Logout Successful");
+
+window.location.href="index.html";
+
+}
+
+if(localStorage.getItem("isLoggedIn")=="true"){
+
+document.getElementById("loginBtn").style.display="none";
+
+document.getElementById("registerBtn").style.display="none";
+
+document.getElementById("logoutBtn").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
+  
