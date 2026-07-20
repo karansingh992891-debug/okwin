@@ -1,102 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - OKWIN</title>
+<title>TASAN WIN - Login</title>
 
 <style>
 body{
 margin:0;
-padding:0;
 background:#111;
 font-family:Arial,sans-serif;
 color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
 
 .box{
 width:90%;
 max-width:400px;
-margin:60px auto;
 background:#222;
 padding:20px;
 border-radius:15px;
-text-align:center;
+border:2px solid gold;
 }
 
 h1{
-color:#00ff33;
+text-align:center;
+color:gold;
+margin-bottom:20px;
 }
 
 input{
-width:90%;
-padding:15px;
+width:100%;
+padding:12px;
 margin:10px 0;
 border:none;
-border-radius:10px;
-font-size:18px;
+border-radius:8px;
+background:#333;
+color:white;
+font-size:16px;
+box-sizing:border-box;
 }
 
 button{
-width:95%;
+width:100%;
 padding:15px;
 margin-top:15px;
-background:#00c800;
-color:white;
-font-size:22px;
+background:gold;
+color:black;
 border:none;
 border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
 }
 
 a{
-color:#00ff33;
+color:gold;
 text-decoration:none;
 }
 </style>
 
 </head>
-
 <body>
 
 <div class="box">
 
-<h1>OKWIN Login</h1>
+<h1>👑 TASAN WIN Login</h1>
 
-<input type="tel" id="mobile" placeholder="Mobile Number">
+<input type="text" id="mobile" placeholder="Mobile Number">
 
 <input type="password" id="password" placeholder="Password">
 
-<button onclick="login()">Login</button>
+<button onclick="loginUser()">LOGIN</button>
 
-<p>
-Don't have an account?
-<a href="register.html">Register</a>
+<p style="text-align:center;margin-top:15px;">
+New User?
+<a href="register.html">Register Here</a>
 </p>
 
 </div>
 
 <script>
-function login(){
+
+function loginUser(){
 
 let mobile=document.getElementById("mobile").value.trim();
 let password=document.getElementById("password").value.trim();
 
-let savedMobile=localStorage.getItem("mobile");
-let savedPassword=localStorage.getItem("password");
+let user=JSON.parse(localStorage.getItem("user"));
 
-if(mobile=="" || password==""){
-alert("Please enter Mobile Number and Password");
+if(!user){
+alert("Please Register First");
 return;
 }
 
-if(mobile===savedMobile && password===savedPassword){
-alert("Login Successful");
+if(user.mobile===mobile && user.password===password){
+
+localStorage.setItem("isLoggedIn","true");
+
+alert("✅ Login Successful");
+
 window.location.href="index.html";
+
 }else{
-alert("Wrong Mobile Number or Password");
+
+alert("❌ Wrong Mobile Number or Password");
+
 }
 
 }
+
 </script>
 
 </body>
